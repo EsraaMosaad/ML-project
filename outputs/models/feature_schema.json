@@ -1,0 +1,10 @@
+{
+  "Sector": "object",
+  "Subsector": "object",
+  "Primary Property Type - Self Selected": "object",
+  "Largest Property Use Type": "object",
+  "Property GFA - Self-Reported (m\u00b2)": "float64",
+  "Number of Buildings": "int64",
+  "Has_NaturalGas": "int64",
+  "Has_Electricity": "int64"
+}

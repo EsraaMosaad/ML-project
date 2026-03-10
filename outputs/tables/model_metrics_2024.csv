@@ -1,0 +1,6 @@
+Model,MAE,RMSE,R2
+Linear Regression (Ridge),6.3731,31.4187,0.997959
+RandomForest,8.3715,92.4062,0.982345
+HistGradientBoosting,18.7829,156.1922,0.949558
+Stacking Ensemble Regression,24.3556,218.0838,0.901663
+XGBoost,19.065,236.4768,0.884376

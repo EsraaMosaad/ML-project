@@ -1,0 +1,4 @@
+Sector,Buildings_in_test,MAE,RMSE,R2
+Municipal,1888,4.0749,18.6336,0.996832
+Post-Secondary,116,22.4437,51.8825,0.998517
+Public Hospital,52,53.9665,142.8942,0.997536

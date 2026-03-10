@@ -1,0 +1,86 @@
+Sector,Primary Property Type - Self Selected,Buildings,Median_GHG,Median_Energy_Intensity
+Municipal,Stadium (Open),1,706.2,1.0016
+Municipal,Energy/Power Station,1,626.61,39.091
+Municipal,Senior Living Community,30,571.6,1.5902
+Municipal,Residential Care Facility,9,472.39,1.7693
+Municipal,Convention Center,2,313.515,0.982
+Municipal,Food Service,1,249.83,1.1104
+Municipal,Courthouse,2,180.24,0.7844
+Municipal,Fitness Center/Health Club/Gym,25,112.34,1.367
+Municipal,Stadium (Closed),32,110.785,1.19
+Municipal,Ice/Curling Rink,309,105.28,1.1377
+Municipal,Heated Swimming Pool,23,76.65,1.8143
+Municipal,Police Station,156,51.155,1.0676
+Municipal,Performing Arts,38,47.87,0.7744
+Municipal,Other - Stadium,5,47.66,0.9597
+Municipal,Residence Hall/Dormitory,4,46.55,0.2095
+Municipal,Other - Restaurant/Bar,1,45.2,1.1553
+Municipal,Transportation Terminal/Station,179,34.22,16764.0
+Municipal,K-12 School,1,33.75,0.044
+Municipal,Other - Recreation,254,32.03,1.165
+Municipal,Other - Services,14,27.765,0.7848
+Municipal,Multifamily Housing,56,27.09,0.714
+Municipal,Mixed Use Property,22,25.915,0.7222
+Municipal,Other - Education,2,23.04,31.5122
+Municipal,Pre-school/Daycare,16,21.29,0.9598
+Municipal,Vehicle Repair Services,16,17.385,0.6447
+Municipal,Fire Station,861,16.7,0.7787
+Municipal,Restaurant,2,15.045,1.6734
+Municipal,Office,885,14.05,0.7764
+Municipal,Urgent Care/Clinic/Other Outpatient,1,14.02,0.7909
+Municipal,Veterinary Office,1,13.82,1.3365
+Municipal,Library,368,12.4,0.7381
+Municipal,Ambulatory Surgical Center,15,11.91,0.8548
+Municipal,Manufacturing/Industrial Plant,1,11.56,0.5573
+Municipal,Community Center and Social Meeting Hall,778,10.155,0.6977
+Municipal,Indoor Arena,398,8.865,0.8315
+Municipal,Other - Entertainment/Public Assembly,128,8.525,0.813
+Municipal,Lifestyle Center,1,8.45,0.4221
+Municipal,Museum,101,7.6,0.6471
+Municipal,Bowling Alley,1,6.28,0.4327
+Municipal,Other - Lodging/Residential,233,5.87,0.8136
+Municipal,Other - Public Services,2177,5.28,1.1223
+Municipal,Drinking Water Treatment & Distribution,714,4.94,3.7029
+Municipal,Medical Office,8,3.425,0.4253
+Municipal,Single-Family Home,173,2.69,0.6782
+Municipal,Wastewater Treatment Plant,678,2.575,5.0136
+Municipal,Retail Store,2,1.175,0.1372
+Municipal,Other,447,0.71,0.7246
+Municipal,Other - Utility,81,0.55,10.7
+Municipal,Food Sales,4,0.385,0.4239
+Municipal,Parking,157,0.35,0.088
+Municipal,Self-Storage Facility,11,0.18,0.1758
+Municipal,Data Center,1,0.13,0.2233
+Municipal,Non-Refrigerated Warehouse,1,0.03,0.0051
+Post-Secondary,Ice/Curling Rink,1,538.74,2.0176
+Post-Secondary,Stadium (Closed),1,324.1,0.2302
+Post-Secondary,Other - Restaurant/Bar,1,229.33,1.2988
+Post-Secondary,Residence Hall/Dormitory,64,183.56,0.5771
+Post-Secondary,Fitness Center/Health Club/Gym,23,127.16,0.8788
+Post-Secondary,Other - Technology/Science,1,93.83,0.9856
+Post-Secondary,Laboratory,4,93.315,0.6323
+Post-Secondary,College/University,398,75.485,0.8531
+Post-Secondary,Veterinary Office,1,60.81,1.9939
+Post-Secondary,Self-Storage Facility,1,50.51,0.3064
+Post-Secondary,Library,8,49.455,0.8809
+Post-Secondary,Pre-school/Daycare,2,47.135,1.4411
+Post-Secondary,Office,9,30.2,0.6792
+Post-Secondary,Other - Education,1,14.65,1.2846
+Post-Secondary,Other - Public Services,3,8.46,0.6923
+Post-Secondary,Single-Family Home,1,7.49,0.428
+Post-Secondary,Parking,1,6.71,0.0575
+Post-Secondary,Other - Lodging/Residential,1,0.66,0.0102
+Public Hospital,Laboratory,4,5069.18,3.0049
+Public Hospital,Ambulatory Surgical Center,2,4513.795,2.5985
+Public Hospital,Senior Living Community,2,971.655,1.2075
+Public Hospital,Hospital (General Medical & Surgical),203,929.03,2.0803
+Public Hospital,Other,3,759.25,1.7774
+Public Hospital,Mixed Use Property,2,321.825,0.7848
+Public Hospital,Outpatient Rehabilitation/Physical Therapy,9,284.13,1.4336
+Public Hospital,Other - Specialty Hospital,13,231.99,1.0087
+Public Hospital,Residential Care Facility,13,116.26,0.8566
+Public Hospital,Energy/Power Station,1,76.07,2.854
+Public Hospital,Distribution Center,1,58.59,0.1274
+Public Hospital,Urgent Care/Clinic/Other Outpatient,7,48.62,1.5441
+Public Hospital,Medical Office,71,21.06,1.2054
+Public Hospital,Office,1,7.7,0.5626

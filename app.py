@@ -4,7 +4,6 @@ import numpy as np
 import joblib
 import matplotlib.pyplot as plt
 import json
-import sklearn
 from pathlib import Path
 
 # Paths to artifacts
@@ -15,11 +14,9 @@ ACTUAL_COL_HINT = "Total (Location-Based) GHG Emissions (Metric Tons CO2e)"
 OPTIONS_PATH = "outputs/models/categorical_options.json"
 
 
-@st.cache_resource
 def load_artifacts():
     """Load the trained model pipeline and feature schema."""
     try:
-        # confirmed local 1.6.1
         model = joblib.load(MODEL_PATH)
         with open(SCHEMA_PATH, "r") as f:
             schema = json.load(f)
@@ -34,7 +31,6 @@ def load_artifacts():
         return None, None, None, f"Error loading artifacts: {str(e)}"
 
 
-@st.cache_data
 def validate_input(df, schema):
     """Validate columns and data types against the schema."""
     required = list(schema.keys())
@@ -272,7 +268,6 @@ def render_ui():
 
     model_type = type(model.named_steps['model']).__name__ if hasattr(model, 'named_steps') else type(model).__name__
     st.sidebar.info(f"Loaded: **{model_type}**")
-    st.sidebar.caption(f"Sklearn version: {sklearn.__version__}")
 
     # Main content
     st.title("Greenhouse Gas Emissions Predictor")

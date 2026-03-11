@@ -20,3 +20,5 @@ __pycache__/
 Thumbs.db
 
 outputs/models/*.joblib
+config.bat
+node_modules

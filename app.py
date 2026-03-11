@@ -315,50 +315,67 @@ def render_ui():
 
     else:
         st.subheader("Single Building Entry")
-        with st.form("single_pred_form"):
-            input_dict = {}
-            cols = st.columns(2)
-            for i, (col_name, dtype) in enumerate(schema.items()):
-                with cols[i % 2]:
-                    if col_name in categorical_options:
-                        input_dict[col_name] = st.selectbox(col_name, options=categorical_options[col_name])
-                    elif "Has_" in col_name:
-                        # Use checkbox for binary fields
-                        val = st.checkbox(col_name, value=False)
-                        input_dict[col_name] = 1 if val else 0
-                    elif "object" in dtype:
-                        input_dict[col_name] = st.text_input(col_name)
-                    else:
-                        if "int" in dtype:
-                            input_dict[col_name] = st.number_input(col_name, value=1, step=1)
-                        else:
-                            input_dict[col_name] = st.number_input(col_name, value=0.0)
+        
+        cascading_path = "outputs/models/cascading_options.json"
+        cascading_data = None
+        if Path(cascading_path).exists():
+            with open(cascading_path, "r") as f:
+                cascading_data = json.load(f)
 
-
+        input_dict = {}
+        
+        current_sector = None
+        if cascading_data and "Sector" in schema:
+            current_sector = st.selectbox("Sector", options=list(cascading_data.keys()))
+            input_dict["Sector"] = current_sector
             
-            submit = st.form_submit_button("Predict")
-            if submit:
-                single_df = pd.DataFrame([input_dict])
-                preds, pred_err = run_predictions(model, single_df)
-                if pred_err:
-                    st.error(pred_err)
+        cols = st.columns(2)
+        idx = 0
+        for col_name, dtype in schema.items():
+            if cascading_data and col_name == "Sector":
+                continue
+                
+            with cols[idx % 2]:
+                if col_name in categorical_options:
+                    options = categorical_options[col_name]
+                    if cascading_data and current_sector and col_name in cascading_data[current_sector]:
+                        options = cascading_data[current_sector][col_name]
+                    input_dict[col_name] = st.selectbox(col_name, options=options)
+                elif "Has_" in col_name:
+                    val = st.checkbox(col_name, value=False)
+                    input_dict[col_name] = 1 if val else 0
+                elif "object" in dtype:
+                    input_dict[col_name] = st.text_input(col_name)
                 else:
-                    st.metric(
-                        "Predicted GHG Emissions", 
-                        f"{preds[0]:.2f} MT CO2e",
-                        help="Metric Tons of Carbon Dioxide Equivalent. This number represents the total annual warming impact of all greenhouse gases released by this building, converted into an equivalent amount of CO2."
-                    )
-                    
-                    # Categorize results
-                    val = preds[0]
-                    if val < 10:
-                        st.success("🟢 **Low Impact:** This building's emissions are significantly below the sector average.")
-                    elif val < 50:
-                        st.info("🟡 **Moderate Impact:** This building's emissions are within the typical range for public facilities.")
-                    elif val < 200:
-                        st.warning("🟠 **High Impact:** This building's emissions are high. Consider energy efficiency retrofits.")
+                    if "int" in dtype:
+                        input_dict[col_name] = st.number_input(col_name, value=1, step=1)
                     else:
-                        st.error("🔴 **Very High Impact:** This building is a major emitter. Urgent environmental audit recommended.")
+                        input_dict[col_name] = st.number_input(col_name, value=0.0)
+            idx += 1
+            
+        submit = st.button("Predict")
+        if submit:
+            single_df = pd.DataFrame([input_dict])
+            preds, pred_err = run_predictions(model, single_df)
+            if pred_err:
+                st.error(pred_err)
+            else:
+                st.metric(
+                    "Predicted GHG Emissions", 
+                    f"{preds[0]:.2f} MT CO2e",
+                    help="Metric Tons of Carbon Dioxide Equivalent. This number represents the total annual warming impact of all greenhouse gases released by this building, converted into an equivalent amount of CO2."
+                )
+                
+                # Categorize results
+                val = preds[0]
+                if val < 10:
+                    st.success("🟢 **Low Impact:** This building's emissions are significantly below the sector average.")
+                elif val < 50:
+                    st.info("🟡 **Moderate Impact:** This building's emissions are within the typical range for public facilities.")
+                elif val < 200:
+                    st.warning("🟠 **High Impact:** This building's emissions are high. Consider energy efficiency retrofits.")
+                else:
+                    st.error("🔴 **Very High Impact:** This building is a major emitter. Urgent environmental audit recommended.")
 
 
 
